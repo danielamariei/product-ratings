@@ -3,7 +3,7 @@
 
 # Architecture 
 - Input: corpus of product ratings
-- Output: product rating
+- Output: rating metrics
 
 ```mermaid
 flowchart LR
