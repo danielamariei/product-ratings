@@ -1,0 +1,14 @@
+Buyer Id,Shop Id,Product Id,Rating
+b1,s1,p-01,4
+b1,s1,p-01,3
+3.5
+b1,s1,p-02,2
+b1,s1,p-02,5
+b1,s1,p-02,5
+4
+b1,s1,p-03,3
+3
+b1,s1,p-04,2
+b1,s1,p-04,1
+1.5
+b1,s1,p-05,0
