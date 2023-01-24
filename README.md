@@ -109,7 +109,7 @@ Import project in your IDE and run them from the IDE.
 ### CMD
 
 ```groovy
-$ ./gradlew -q bootRun -Pargs=--ratings.path=<path-to-file>--max.rated.products=<number>,--spring.profiles.active=csv.reader,--spring.profiles.active=command.line.writer
+$ ./gradlew -q bootRun -Pargs=--ratings.path=<path-to-file>,--max.rated.products=<number>,--spring.profiles.active=csv.reader,--spring.profiles.active=command.line.writer
 ```
 
 You can pipe the execution to a file, if you want to store the results for later analysis.
