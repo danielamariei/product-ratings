@@ -43,6 +43,18 @@ The central piece of the solution revolves around processing and aggregating the
 - Compute the metrics
 - Write metrics
 
+### Algorithmic approach
+- The most rated and least rated products can be determined in O(n) using a linear scan.
+- Determining the top k best rated and worst rated products can be solved optimally using a Priority Queue as follows:
+  - Initialize a Priority Queue (Heap) using the required comparator
+  - Sets its size to the maximum number of elements to store in it
+  - Reads the input elements one by one and adds them to the Heap
+  - The heap does not grow over the maximum number of points
+  - Complexity
+    - Assuming n is number of points and k number of max elements to determine
+    - Time: O(n log k), practically O(n) when the max elements to determine is small
+    - Memory: O(k), practically O(1) for small number of elements
+
 # Input file CSV Structure
 - `Buyer Id`: alphanumeric, starts with letter	
 - `Shop Id`: alphanumeric, starts with letter
@@ -87,16 +99,17 @@ Import project in your IDE and run them from the IDE.
 
 ### Params
 - The corpus of product ratings: initialize `ratings.path` with the path to the product ratings file. Escape the path if required. 
+- Number of max rated products for best reated and worst rated products: `max.rated.products` should be initialized with the desired number.
 - There will be multiple `spring.profiles.active` properties:
   - Reading strategy: initialize `spring.profiles.active` with one of `[csv.reader]`. 
   - Printing strategy: initialize `spring.profiles.active` with one of `[command.line.writer, captor.writer]`
     - Use `command.line.writer` most of the time
-    - `captor.writer` is relevant for testing
+    - `captor.writer` is relevant for testing 
 
 ### CMD
 
 ```groovy
-$ ./gradlew -q bootRun -Pargs=--ratings.path=<path-to-file>,--spring.profiles.active=csv.reader,--spring.profiles.active=command.line.writer
+$ ./gradlew -q bootRun -Pargs=--ratings.path=<path-to-file>--max.rated.products=<number>,--spring.profiles.active=csv.reader,--spring.profiles.active=command.line.writer
 ```
 
 You can pipe the execution to a file, if you want to store the results for later analysis.
