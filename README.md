@@ -1,5 +1,9 @@
 # Introduction
-- Java Application that reads a large corpus of product ratings, processes them, and computes relevant metrics.
+- Java Application that reads a large corpus of product ratings, processes them, and computes relevant metrics. 
+- Uses the Java API for Bean Validation (JSR 380) to ensure that fields meet specific criteria in a declarative format.
+- Ability to read the points from different sources: binary file, JSON, etc. 
+- Provides support for reading the input in a lazy fashion through iterators. 
+- Optimally determines the top k best rated and worst rated products by using a Priority Queue. 
 
 # Architecture 
 - Input: corpus of product ratings
